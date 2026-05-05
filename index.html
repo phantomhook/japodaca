@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julian Apodaca — Health Science & High-Performance Leadership</title>
+<meta name="description" content="Julian Apodaca: Third-year Health & Exercise Science Scholar at Regis University. President, RU Barbell. Bridging clinical knowledge with operational excellence." />
+
+<!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    page_title: 'Julian Apodaca Portfolio',
+    send_page_view: true
+  });
+  // Track section views for engagement depth
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          gtag('event', 'section_view', {
+            section_id: entry.target.id,
+            engagement_time_msec: 100
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    sections.forEach(s => observer.observe(s));
+  });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0F1B3C;
+    --navy-deep: #0A1230;
+    --slate: #2D3748;
+    --slate-soft: #4A5568;
+    --white: #FAFAFA;
+    --paper: #F4F4F0;
+    --line: #E2E2DC;
+    --accent: #D97706;
+    --accent-soft: #FEF3C7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* Sticky Nav */
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244, 244, 240, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 2rem;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-brand {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+  }
+  .nav-brand span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* Containers */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: var(--navy);
+    z-index: 0;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--slate-soft);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.5rem; }
+  .hero-meta span::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  h1.hero-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    margin-bottom: 2rem;
+  }
+  h1.hero-title em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 800;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--slate);
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+  }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    padding: 0.95rem 1.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border: 1.5px solid var(--navy);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary { background: var(--navy); color: var(--white); }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-ghost { background: transparent; color: var(--navy); }
+  .btn-ghost:hover { background: var(--navy); color: var(--white); }
+
+  .hero-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+    box-shadow: 0 30px 60px -20px rgba(15,27,60,0.4),
+                0 0 0 8px rgba(255,255,255,0.05);
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--slate-soft);
+    background: linear-gradient(135deg, var(--paper) 0%, #E8E8E0 100%);
+  }
+  .photo-fallback span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .photo-frame-corner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    pointer-events: none;
+  }
+
+  /* Section Headers */
+  .section { padding: 6rem 0; border-top: 1px solid var(--line); }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-header .mono { color: var(--accent); margin-bottom: 1rem; }
+  .section-header h2 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--navy);
+    max-width: 800px;
+  }
+
+  /* Academic Section */
+  .academic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .timeline {
+    border-left: 2px solid var(--navy);
+    padding-left: 2rem;
+    position: relative;
+  }
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.4rem;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border: 3px solid var(--paper);
+    border-radius: 50%;
+  }
+  .timeline-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-desc { color: var(--slate); font-size: 0.95rem; }
+
+  .academic-feature {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 2.5rem;
+  }
+  .feature-tag {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.3rem 0.7rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+  .feature-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--navy);
+  }
+
+  /* Leadership / RU Barbell */
+  .leadership {
+    background: var(--navy);
+    color: var(--white);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .leadership::before {
+    content: 'RU BARBELL';
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 14rem;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .leadership .section-header h2 { color: var(--white); }
+  .leadership .section-header .mono { color: var(--accent); }
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  .lead-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    transition: all 0.25s;
+  }
+  .lead-card:hover {
+    background: rgba(217,119,6,0.1);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .lead-card .mono { color: var(--accent); margin-bottom: 1rem; }
+  .lead-card h3 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .lead-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+  /* Experience Matrix */
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .exp-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 2rem;
+    transition: all 0.25s;
+    position: relative;
+  }
+  .exp-card:hover {
+    border-color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(15,27,60,0.2);
+  }
+  .exp-card:hover .exp-arrow { transform: translateX(4px); color: var(--accent); }
+  .exp-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .exp-role {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+  .exp-company {
+    font-size: 0.9rem;
+    color: var(--slate-soft);
+    margin-bottom: 1rem;
+  }
+  .exp-list {
+    list-style: none;
+    padding: 0;
+  }
+  .exp-list li {
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: var(--slate);
+  }
+  .exp-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--slate-soft);
+    transition: all 0.2s;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .skill-block h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--navy);
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .skill-list li::after {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Resume Section */
+  .resume-section { background: var(--white); }
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .resume-copy p {
+    font-size: 1.1rem;
+    color: var(--slate);
+    margin-bottom: 2rem;
+    max-width: 460px;
+  }
+  .resume-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .resume-meta {
+    color: var(--slate-soft);
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .thumb-frame {
+    background: var(--paper);
+    padding: 2rem 1.75rem;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 60px -25px rgba(15,27,60,0.25);
+    aspect-ratio: 8.5 / 11;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s;
+  }
+  .thumb-frame:hover { transform: rotate(0deg); }
+  .thumb-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--navy);
+  }
+  .thumb-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 25%;
+    height: 100%;
+    background: var(--accent);
+  }
+  .thumb-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-top: 0.5rem;
+  }
+  .thumb-name span { color: var(--accent); }
+  .thumb-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate-soft);
+    margin-top: 0.4rem;
+  }
+  .thumb-divider {
+    border-bottom: 2px solid var(--navy);
+    margin: 0.6rem 0 0.8rem;
+  }
+  .thumb-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.1em;
+  }
+  .thumb-block {
+    height: 0.4rem;
+    background: var(--line);
+    margin-bottom: 0.3rem;
+    border-radius: 1px;
+  }
+  .thumb-block.short { width: 70%; }
+  .thumb-section {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--navy);
+    margin: 0.8rem 0 0.4rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .thumb-callout {
+    background: var(--navy);
+    color: white;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.55rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    border-left: 3px solid var(--accent);
+  }
+  .thumb-callout span { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 5rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-grid h5 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .footer-grid p, .footer-grid a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+  .footer-grid a:hover { color: var(--accent); }
+  .footer-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.4);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .hero::before { width: 100%; opacity: 0.05; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .academic-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .leadership-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .resume-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; }
+    .nav-links { display: none; }
+    .leadership::before { font-size: 6rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <div class="nav-brand">JULIAN APODACA<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#academic">Academic</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="about" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-meta mono">
+        <span>San Jose, CA</span>
+      </div>
+      <h1 class="hero-title">Bridging health science with <em>high-performance leadership.</em></h1>
+      <p class="hero-sub">Senior Health & Exercise Science Scholar at Regis University, graduating May 2027. President of RU Barbell. Translating clinical knowledge into operational excellence and community infrastructure.</p>
+      <div class="cta-row">
+        <a href="julian-apodaca-resume.pdf" download class="btn btn-primary" onclick="gtag('event', 'resume_download', {file_name: 'julian-apodaca-resume.pdf'});">Download Resume ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="julian.jpg" alt="Julian Apodaca" onerror="this.style.display='none';this.parentElement.classList.add('placeholder');" />
+        <div class="photo-fallback">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>julian.jpg</span>
+        </div>
+      </div>
+      <div class="photo-frame-corner"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC -->
+<section id="academic" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="mono">// 01 — Academic Foundation</div>
+      <h2>Three years of disciplined inquiry into human movement and health.</h2>
+    </div>
+    <div class="academic-grid">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2026 — 2027 · SENIOR</div>
+          <div class="timeline-title">Final Year, Health & Exercise Science</div>
+          <div class="timeline-desc">Capstone coursework in applied movement science. Expected graduation May 2027.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 — 2026 · JUNIOR</div>
+          <div class="timeline-title">Junior Year Completed</div>
+          <div class="timeline-desc">Advanced exercise physiology and clinical applications. Continued leadership of RU Barbell.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024 — 2025 · SOPHOMORE</div>
+          <div class="timeline-title">Elected President, RU Barbell</div>
+          <div class="timeline-desc">Took the helm of the Regis University Barbell Club. Secured university funding, grew membership, and built out campus programming.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023 — 2024 · FRESHMAN</div>
+          <div class="timeline-title">Enrollment & Scholarship</div>
+          <div class="timeline-desc">Awarded academic scholarship to Regis University, College of Health & Exercise Science.</div>
+        </div>
+      </div>
+      <div class="academic-feature">
+        <span class="feature-tag">Featured</span>
+        <div class="feature-title">Regis University</div>
+        <p style="color: var(--slate); margin-bottom: 1.5rem;">College of Health and Exercise Science. Continuous enrollment since 2023, recognized with academic scholarship for sustained performance and intellectual rigor. Senior standing, expected graduation May 2027.</p>
+        <div style="border-top: 1px solid var(--line); padding-top: 1.5rem;">
+          <div class="mono" style="color: var(--slate-soft); margin-bottom: 0.5rem;">Core Competencies</div>
+          <div style="font-family: 'Archivo', sans-serif; color: var(--navy); font-weight: 500;">Human Movement · Exercise Physiology · Health Principles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="leadership">
+  <div class="container">
+    <div class="section-header">
+      <div class="mono">// 02 — Executive Feature</div>
+      <h2>From vision to infrastructure: leading RU Barbell.</h2>
+    </div>
+    <p style="color: rgba(255,255,255,0.7); max-width: 700px; font-size: 1.1rem;">As President of the Regis University Barbell Club, Julian has driven funded growth, expanded membership, and built durable campus programming.</p>
+    <div class="leadership-grid">
+      <div class="lead-card">
+        <div class="mono">Funding</div>
+        <h3>Secured University Backing</h3>
+        <p>Navigated institutional approval to obtain official funding and recognition, strengthening the club's standing as a sanctioned campus organization.</p>
+      </div>
+      <div class="lead-card">
+        <div class="mono">Growth</div>
+        <h3>Membership Expansion</h3>
+        <p>Built and managed an active member base, fostering a community grounded in shared discipline and progressive training.</p>
+      </div>
+      <div class="lead-card">
+        <div class="mono">Execution</div>
+        <h3>Campus Events</h3>
+        <p>Designed and executed club programming and competitions, raising visibility and engagement across the Regis community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="mono">// 03 — Work History Matrix</div>
+      <h2>Versatility across clinical, operational, and competitive environments.</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-tag">Clinical / Gym Ops</div>
+        <div class="exp-role">Front Desk Associate</div>
+        <div class="exp-company">UFC Gym</div>
+        <ul class="exp-list">
+          <li>Member safety oversight</li>
+          <li>Equipment organization</li>
+          <li>Professional service standards</li>
+        </ul>
+        <div class="exp-arrow">→</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-tag">Operational Resilience</div>
+        <div class="exp-role">Line Cook</div>
+        <div class="exp-company">Panda Express</div>
+        <ul class="exp-list">
+          <li>High-volume multitasking</li>
+          <li>Strict deadline management</li>
+          <li>Resourceful problem solving</li>
+        </ul>
+        <div class="exp-arrow">→</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-tag">Competitive Foundation</div>
+        <div class="exp-role">Varsity Pitcher & Team Leader</div>
+        <div class="exp-company">Prospect High · 4 Years</div>
+        <ul class="exp-list">
+          <li>Strategic in-game execution</li>
+          <li>Defensive specialization</li>
+          <li>Team-first leadership</li>
+        </ul>
+        <div class="exp-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="mono">// 04 — Capabilities</div>
+      <h2>Tech-literate, people-oriented, built to solve.</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <h4>Technical Fluency</h4>
+        <ul class="skill-list">
+          <li>Apple Ecosystem</li>
+          <li>Microsoft Office</li>
+          <li>Google Workspace</li>
+          <li>Hardware & Software Proficiency</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h4>Core Traits</h4>
+        <ul class="skill-list">
+          <li>Problem Solver with Initiative</li>
+          <li>People-Oriented Leadership</li>
+          <li>Operational Discipline</li>
+          <li>Cross-Domain Adaptability</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="section resume-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="mono">// 05 — Resume</div>
+      <h2>Take the full story with you.</h2>
+    </div>
+    <div class="resume-grid">
+      <div class="resume-copy">
+        <p>One-page resume in PDF, designed to match. Updated for senior year, RU Barbell presidency, and current contact details. Open it, save it, share it.</p>
+        <div class="resume-cta">
+          <a href="julian-apodaca-resume.pdf" download class="btn btn-primary" onclick="gtag('event', 'resume_download', {file_name: 'julian-apodaca-resume.pdf', source: 'resume_section'});">Download PDF ↓</a>
+          <a href="julian-apodaca-resume.pdf" target="_blank" class="btn btn-ghost" onclick="gtag('event', 'resume_view', {file_name: 'julian-apodaca-resume.pdf'});">View in Browser →</a>
+        </div>
+        <div class="resume-meta mono">
+          <span>1 PAGE</span>
+          <span>·</span>
+          <span>UPDATED 2026</span>
+          <span>·</span>
+          <span>PDF</span>
+        </div>
+      </div>
+      <div class="resume-thumb">
+        <div class="thumb-frame">
+          <div class="thumb-bar"></div>
+          <div class="thumb-name">JULIAN APODACA<span>.</span></div>
+          <div class="thumb-line">Health & Exercise Science · Leadership · Operations</div>
+          <div class="thumb-divider"></div>
+          <div class="thumb-label">// 01 — Profile</div>
+          <div class="thumb-block"></div>
+          <div class="thumb-block short"></div>
+          <div class="thumb-section">Leadership</div>
+          <div class="thumb-callout">
+            <span>President · Regis University Barbell Club</span>
+          </div>
+          <div class="thumb-section">Experience</div>
+          <div class="thumb-block"></div>
+          <div class="thumb-block short"></div>
+          <div class="thumb-block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-name">Julian Apodaca</div>
+        <p>Health & Exercise Science Scholar. President, RU Barbell. Open to internships, research, and leadership opportunities at the intersection of health science and operations.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p><a href="mailto:julianmapodaca@gmail.com">julianmapodaca@gmail.com</a></p>
+        <p><a href="tel:6692077089">669.207.7089</a></p>
+      </div>
+      <div>
+        <h5>Based In</h5>
+        <p>San Jose, CA · 95125</p>
+        <p>Denver, CO</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Julian Apodaca</span>
+      <span>Built with discipline.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
